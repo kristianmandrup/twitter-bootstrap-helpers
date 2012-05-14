@@ -4,9 +4,9 @@ require File.expand_path('../lib/twitter-bootstrap-helpers/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Bradly Feeley"]
   gem.email         = ["bradlyf@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = "A set of Ruby on Rails view helpers to be used with Twitter Bootstrap"
+  gem.summary       = "A set of Ruby on Rails view helpers to be used with Twitter Bootstrap"
+  gem.homepage      = "https://github.com/bradly/twitter-bootstrap-helpers"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
