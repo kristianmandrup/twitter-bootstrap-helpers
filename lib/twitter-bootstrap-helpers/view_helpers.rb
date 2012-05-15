@@ -13,7 +13,7 @@ module TwitterBootstrapHelpers
 
       if opts[:heading]
         alert_classes << "alert-block"
-        contents = alert_heading_tag + contents
+        contents = alert_heading_tag(opts[:heading]) + contents
       end
 
       if opts[:show_close_button]
