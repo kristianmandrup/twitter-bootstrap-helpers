@@ -24,7 +24,7 @@ module TwitterBootstrapHelpers
     end
 
     def alert_close_tag
-      content_tag(:a, '&times;', :class => 'close', :data => {:dismiss => 'alert'})
+      content_tag(:a, raw('&times;'), :class => 'close', :data => {:dismiss => 'alert'})
     end
 
     def alert_heading_tag(heading)
