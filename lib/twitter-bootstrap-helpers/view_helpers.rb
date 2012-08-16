@@ -1,7 +1,7 @@
 module TwitterBootstrapHelpers
   module ViewHelpers
-    def icon_for(icon_name)
-      content_tag :i, '', :class => "icon-#{icon_name}"
+    def icon_for(icon_name, string = '')
+      content_tag :i, string, :class => "icon-#{icon_name}"
     end
 
     def alert_message(opts = {}, &block)
