@@ -1,13 +1,13 @@
 module TwitterBootstrapHelpers
   module ViewHelpers
-    def icon_for(icon_name, string = '', icon_position = 'left')
+    def icon_for(icon_name, string = '', icon_position = :left)
       classes = ["icon-#{icon_name}"]
       if string.present?
-        classes << 'onLeft' if icon_position == 'left'
-        classes << 'onRight' if icon_position == 'right'
+        classes << 'on-left' if icon_position == :left
+        classes << 'on-right' if icon_position == :right
       end
       icon = content_tag(:i, '', :class => classes)
-      html = (icon_position == 'left') ? icon << string : string << icon
+      html = (icon_position == :left) ? icon << string : string << icon
       raw(html)
     end
 
