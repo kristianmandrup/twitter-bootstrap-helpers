@@ -32,7 +32,7 @@ module TwitterBootstrapHelpers
     end
 
     def alert_close_tag
-      content_tag(:a,  :class => 'close', :data => {:dismiss => 'alert'}) do
+      content_tag(:a, :href => '#', :class => 'close', :data => {:dismiss => 'alert'}) do
         raw('&times;')
       end
     end
