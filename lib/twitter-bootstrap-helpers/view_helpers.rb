@@ -8,7 +8,8 @@ module TwitterBootstrapHelpers
         classes << 'on-right' if icon_position == :right
       end
       icon = content_tag(:i, '', :class => classes)
-      html = icon_position == :left ? icon + string : string + icon
+      span = content_tag(:span, string)
+      html = icon_position == :left ? icon + span : span + icon
       raw(html)
     end
 
