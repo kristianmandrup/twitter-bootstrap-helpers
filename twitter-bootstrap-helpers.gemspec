@@ -2,7 +2,7 @@
 require File.expand_path('../lib/twitter-bootstrap-helpers/version', __FILE__)
 
 Gem::Specification.new do |gem|
-  gem.authors       = ["Bradly Feeley"]
+  gem.authors       = ["Bradly Feeley", "Kristian Mandrup"]
   gem.email         = ["bradlyf@gmail.com"]
   gem.description   = "A set of Ruby on Rails view helpers to be used with Twitter Bootstrap"
   gem.summary       = "A set of Ruby on Rails view helpers to be used with Twitter Bootstrap"

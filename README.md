@@ -1,6 +1,6 @@
 # Twitter::Bootstrap::Helpers
 
-TODO: Write a gem description
+For Twitter Bootstrap 2.1+
 
 ## Installation
 
@@ -18,7 +18,95 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+See: http://twitter.github.com/bootstrap/components.html#labels-badges
+
+...and components below.
+
+All th examples below are written in HAML ;)
+
+### Alerts
+
+* alert_heading_tag
+* alert_message
+* alert_close_tag
+
+```ruby
+alert_heading_tag 'Important'
+alert_close_tag
+
+alert_message type: 'warning', close: true, heading: 'Important'
+```
+
+### Badge
+
+`ts_badge type, text = '', options = {}, &block`
+
+### Hero unit
+
+`ts_hero_unit heading, tagline, options = {}, &block`
+
+```haml
+= ts_hero_unit 'Hello World', 'the place to be' do
+  %p
+    Where all is good...
+  .btn btn-primary
+    Enjoy
+```
+
+### Icon
+
+```haml
+= icon_for :ok, 'Okay'
+= icon_for :ok, 'Okay', :right
+```
+
+### Label
+
+`ts_label type, string = '', options = {}, &block`
+
+```haml
+= ts_label :info, 'More info...'
+```
+
+### Progress
+
+`ts_progress options = {}, &block`
+
+`ts_progress_bar width, options = {}, &block`
+
+```haml
+= ts_progress type: 'info' do
+  = ts_progress_bar 60
+
+= ts_progress do
+  = ts_progress_bar 60, type: 'info'
+  = ts_progress_bar 30, type: 'warning'
+```
+
+### Thumbnails
+
+`ts_thumbnails options= {}, &block`
+
+`ts_thumbnail size = 2, src, options = {}`
+
+```haml
+= ts_thumbnails do
+  - pictures.each do |pic|
+    ts_thumbnail src: pic.src
+```
+
+## Extras
+
+For form helpers, see Twitter Bootstrap form builders:
+
+* [formtastic-bootstrap](https://github.com/mjbellantoni/formtastic-bootstrap)
+* [simple_form-bootstrap](git://github.com/rafaelfranca/simple_form-bootstrap.git)
+* [twitter_bootstrap_form_for](https://github.com/stouset/twitter_bootstrap_form_for)
+
+And many more... 
+
+* [bootstrap-helper](https://github.com/xdite/bootstrap-helper)
+* [font_awesome-sass-rails](https://github.com/kristianmandrup/font_awesome-sass-rails)
 
 ## Contributing
 

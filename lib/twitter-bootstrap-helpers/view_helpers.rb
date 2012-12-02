@@ -1,46 +1,36 @@
+module TwitterBoots
+  class << self
+    attr_writer :validate
+
+    def validate
+      @validate ||= true
+    end
+    alias_method :validate?, :validate
+
+    def validate_type! type
+      return true if !validate? || TwitterBoots.valid_type? type
+      raise ArgumentError, "Not a valid label type: #{type}, must be one of: #{valid_types}" 
+    end
+
+    def valid_type? type
+      valid_types.include? type.to_s
+    end
+
+    def valid_types
+      %w{success warning important info inverse}
+    end
+
+    def helper_modules
+      %w{alert badge hero_unit icon label progress thumbnail}
+    end
+  end
+end
+
 module TwitterBootstrapHelpers
   module ViewHelpers
-    def icon_for(icon_name, string = '', icon_position = :left)
-      icon_name = icon_name.to_s.gsub('_', '-')
-      classes = ["icon-#{icon_name}"]
-      if string.present?
-        classes << 'on-left' if icon_position == :left
-        classes << 'on-right' if icon_position == :right
-      end
-      icon = content_tag(:i, '', :class => classes)
-      span = content_tag(:span, string)
-      html = icon_position == :left ? icon + span : span + icon
-      raw(html)
+    TwitterBoots.helper_modules.each do |name|
+      require "twitter-bootstrap-helpers/view_helpers/#{name}"
+      include "#{name}".constantize
     end
-
-    def alert_message(opts = {}, &block)
-      alert_classes = ["alert"]
-      alert_classes << "alert-#{opts[:type]}" if opts[:type]
-      alert_classes << opts[:class] if opts[:class]
-
-      contents = capture(&block)
-
-      if opts[:heading]
-        alert_classes << "alert-block"
-        contents = alert_heading_tag(opts[:heading]) + contents
-      end
-
-      if opts[:show_close_button]
-        contents = alert_close_tag + contents
-      end
-
-      content_tag :div, contents, :class => alert_classes.join(' ')
-    end
-
-    def alert_close_tag
-      content_tag(:a, :href => '#', :class => 'close', :data => {:dismiss => 'alert'}) do
-        raw('&times;')
-      end
-    end
-
-    def alert_heading_tag(heading)
-      contents = content_tag(:h4, heading, :class => 'alert-heading')
-    end
-
   end
 end
