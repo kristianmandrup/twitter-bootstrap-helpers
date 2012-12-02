@@ -95,18 +95,30 @@ alert_message type: 'warning', close: true, heading: 'Important'
     ts_thumbnail src: pic.src
 ```
 
-## Extras
+## More Twitter Bootstrap helpers
 
-For form helpers, see Twitter Bootstrap form builders:
+Twitter Bootstrap form builders:
 
 * [formtastic-bootstrap](https://github.com/mjbellantoni/formtastic-bootstrap)
 * [simple_form-bootstrap](git://github.com/rafaelfranca/simple_form-bootstrap.git)
 * [twitter_bootstrap_form_for](https://github.com/stouset/twitter_bootstrap_form_for)
+* [bootstrap_forms](https://github.com/sethvargo/bootstrap_forms)
 
-And many more... 
+Other View helpers
 
 * [bootstrap-helper](https://github.com/xdite/bootstrap-helper)
 * [font_awesome-sass-rails](https://github.com/kristianmandrup/font_awesome-sass-rails)
+* [twitter-bootstrap-typeahead](https://github.com/tcrosen/twitter-bootstrap-typeahead)
+
+Typeahead - See: https://github.com/tcrosen/twitter-bootstrap-typeahead/tree/2.0
+
+## Cool extras
+
+* [bootswatch](https://github.com/thomaspark/bootswatch)
+
+See examples at [bootswatch.com](http://bootswatch.com/)
+
+Many more gems and tools for TS with Rails out there... seek and you will find ;)
 
 ## Contributing
 
