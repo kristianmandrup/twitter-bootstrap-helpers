@@ -13,7 +13,7 @@ module TwitterBootstrapHelpers
         puts "ts_progress: #{clazz} #{options}"
 
         type = options[:type]
-        TwitterBoots.validate_type!(type) if type
+        TwitterBoots.validate_progress_type!(type) if type
         clazz << " progress-#{type}" if type
 
         content = block_given? ? capture(&block) : options[:txt]
@@ -32,7 +32,7 @@ module TwitterBootstrapHelpers
         clazz = "bar"
 
         if type
-          TwitterBoots.validate_type!(type) 
+          TwitterBoots.validate_progress_type!(type) 
           clazz << " bar-#{type}" if type
         end
 

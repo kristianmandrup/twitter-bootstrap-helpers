@@ -9,11 +9,24 @@ module TwitterBoots
 
     def validate_type! type
       return true if !validate? || valid_type?(type)
-      raise ArgumentError, "Not a valid label type: #{type}, must be one of: #{valid_types}"
+      raise ArgumentError, "Not a valid type: #{type}, must be one of: #{valid_types}"
+    end
+
+    def validate_progress_type! type
+      return true if !validate? || valid__progress_type?(type)
+      raise ArgumentError, "Not a valid progress type: #{type}, must be one of: #{valid_progress_types}"
     end
 
     def valid_type? type
       valid_types.include? type.to_s
+    end
+
+    def valid_progress_type? type
+      valid_progress_types.include? type.to_s
+    end
+
+    def valid_progress_types 
+      %w{info success warning danger}
     end
 
     def valid_types
