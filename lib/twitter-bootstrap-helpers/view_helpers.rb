@@ -13,7 +13,7 @@ module TwitterBoots
     end
 
     def validate_progress_type! type
-      return true if !validate? || valid__progress_type?(type)
+      return true if !validate? || valid_progress_type?(type)
       raise ArgumentError, "Not a valid progress type: #{type}, must be one of: #{valid_progress_types}"
     end
 
