@@ -8,8 +8,8 @@ module TwitterBoots
     alias_method :validate?, :validate
 
     def validate_type! type
-      return true if !validate? || TwitterBoots.valid_type? type
-      raise ArgumentError, "Not a valid label type: #{type}, must be one of: #{valid_types}" 
+      return true if !validate? || valid_type?(type)
+      raise ArgumentError, "Not a valid label type: #{type}, must be one of: #{valid_types}"
     end
 
     def valid_type? type
@@ -30,7 +30,7 @@ module TwitterBootstrapHelpers
   module ViewHelpers
     TwitterBoots.helper_modules.each do |name|
       require "twitter-bootstrap-helpers/view_helpers/#{name}"
-      include "#{name}".constantize
+      include "TwitterBootstrapHelpers::ViewHelpers::#{name.camelize}".constantize
     end
   end
 end

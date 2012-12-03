@@ -1,6 +1,6 @@
 module TwitterBootstrapHelpers
   module ViewHelpers
-    module Badge
+    module HeroUnit
       # <span class="label label-success">Success</span>
       def ts_hero_unit heading, tagline, options = {}, &block
         clazz = "hero-unit"
