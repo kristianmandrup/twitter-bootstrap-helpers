@@ -37,6 +37,10 @@ alert_close_tag
 alert_message type: 'warning', close: true, heading: 'Important'
 ```
 
+Aliases:
+
+`ts_alert_message (or ts_alert), ts_alert_heading, ts_alert_close`
+
 ### Badge
 
 `ts_badge type, text = '', options = {}, &block`
@@ -59,6 +63,8 @@ alert_message type: 'warning', close: true, heading: 'Important'
 = icon_for :ok, 'Okay'
 = icon_for :ok, 'Okay', :right
 ```
+
+Alias: `ts_icon`
 
 ### Label
 

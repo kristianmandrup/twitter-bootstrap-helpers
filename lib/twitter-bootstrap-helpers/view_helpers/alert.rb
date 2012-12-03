@@ -22,16 +22,20 @@ module TwitterBootstrapHelpers
 
         content_tag :div, contents, :class => alert_classes.join(' ')
       end
+      alias_method :ts_alert_message, :alert_message
+      alias_method :ts_alert,         :alert_message
 
       def alert_close_tag
         content_tag(:a, :href => '#', :class => 'close', :data => {:dismiss => 'alert'}) do
           raw('&times;')
         end
       end
+      alias_method :ts_alert_close, :alert_close_tag
 
       def alert_heading_tag(heading)
         contents = content_tag(:h4, heading, :class => 'alert-heading')
       end
+      alias_method :ts_alert_heading, :alert_heading_tag
     end
   end
 end

@@ -13,6 +13,7 @@ module TwitterBootstrapHelpers
         html = icon_position == :left ? icon + span : span + icon
         raw(html)
       end
+      alias_method :ts_icon, :icon_for
     end
   end
 end
